@@ -11,7 +11,7 @@ The scripts performs the following operations with the bam files as input.
 4. generate figure 3I in the paper (using ggplot2)
 
 
-# Extra notes :
+### Extra notes :
 1. Fastq files were processed with cutadapt as :
     cutadapt -m 40 -q 20 -o $outfolder/sample1_r1.fastq -p $outfolder/sample1_r2.fastq sample1_r1.fastq sample1_r2.fastq
 2. Mapped with STAR with following parameters :
