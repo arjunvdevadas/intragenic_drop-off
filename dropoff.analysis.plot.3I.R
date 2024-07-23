@@ -413,7 +413,7 @@
     mutate(Color = case_when(grepl(sample, pattern = "DMSO") ~ "Control",
                              grepl(sample, pattern = "DTAG") ~ paste0(treatment_time," dSSRP1"),))
   drop_prob$Color %<>% factor(., levels = c("Control", "1 h dSSRP1", "4 h dSSRP1"))
-  drop_prob$sample %<>% factor(., levels = c("DMSO1h", "DTAG1h", "DMSO4h", "DTAG4h")) #, labels = c("Control", "1 h dSSRP1", "Control", "4 h dSSRP1")
+  drop_prob$sample %<>% factor(., levels = c("DMSO1h", "DTAG1h", "DMSO4h", "DTAG4h")) 
   FCT.colors = c("blue", "darkblue")
   
   ggplot(data = drop_prob, mapping = aes(x=sample,y=`drop-off_p`,group = sample,fill=Color))+
@@ -441,6 +441,6 @@
       legend.title=element_text(size=6),
       legend.text=element_text(size=6),
       legend.key.size = grid::unit(3,"mm")) #+
-  # annotation_logticks(sides = "l")
+  
   ggsave(filename = "fig3I.pdf",path = file.path(out.file.path) ,device = "pdf", height=60,width = 60,dpi=300,units="mm",useDingbats=FALSE, family="Helvetica") 
 }
