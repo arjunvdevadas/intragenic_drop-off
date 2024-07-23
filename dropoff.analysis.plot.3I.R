@@ -24,10 +24,10 @@
 
 # paths and input variables
 {
-  setwd("/usr/users/adevada/")
+  setwd("") # change accordingly
   
   # anno
-  anno.path = "Projects/fact_ms/finalRun/FACT_expressed_non_ovelapping_gene_annotation.RData"
+  anno.path = "data/FACT_expressed_non_ovelapping_gene_annotation.RData"
   anno = get(load(anno.path)) # granges object
   
   # cov_i and cov_f annotation
@@ -37,19 +37,18 @@
   coverage.final.anno = resize(anno, fix = "end", width = (width(anno) - start.width)) # gene body annotation
   
   # bam files
-  bam.files.path = "Projects/SSRP1_IWS1/RawData/BamFiles/SSRP1_cutadapt/"
+  bam.files.path = ""
   bam.files = list.files(bam.files.path, pattern = ".bam$", full.names = F) # 8 samples, 4 conditions 2 replicates each
-  bam.files = bam.files[c(2,3,5,6,8,9,11,12)]
   
  # chromosome names and lengths
-  chrs.lengths.path = "Projects/fact_ms/finalRun/refseq_chrs_lengths.RData"
+  chrs.lengths.path = "data/refseq_chrs_lengths.RData"
   chrs.lengths = get(load(chrs.lengths.path))
   
   # antisense bias ratio
-  antisense.bias.ratio = "Projects/fact_ms/finalRun/FACT_antisense_bias_ratio.RData"
+  antisense.bias.ratio = "data/FACT_antisense_bias_ratio.RData"
   
   # outputs
-  out.file.path = "Projects/fact_ms/finalRun/"
+  out.file.path = ""
 }
 
 # functions
@@ -404,7 +403,7 @@
   # plot (base R plot)
   boxplot(dropoff.probability[, c("DMSO1h", "DMSO4h", "DTAG1h", "DTAG4h")], outline = F, notch = T)
 }
-
+  
 # figure 3I (using ggplot2)
 {
   drop_prob = dropoff.probability[, c(9:12)] %>% tibble %>% 
