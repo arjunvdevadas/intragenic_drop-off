@@ -10,6 +10,17 @@ The scripts performs the following operations with the bam files as input.
 3. estimate the dropoff rate from the above coverages
 4. generate figure 3I in the paper (using ggplot2)
 
+The following packages need to be installed for the script to run
+ 1. rtracklayer 1.58.0
+ 2. GenomicAlignments 1.34.0
+ 3. Rsamtools 2.14.0
+ 4. ggplot2 3.3.6
+ 5. dplyr 1.0.9
+ 6. tidyr 1.2.0
+ 7. ggpubr 0.4.0
+ 8. magrittr 2.0.3
+ 9. doParallel 1.0.17
+ 
 
 ### Extra notes :
 1. For this analysis, fastq files were processed with cutadapt as :
