@@ -427,20 +427,20 @@
       labels = scales::trans_format("log10", scales::math_format(10^.x))) + 
     labs(title = "TT-seq: drop-off probability [n = 3190]",x="", y = "Probabilty of drop-off")+
     theme_classic(base_family="Helvetica", base_size = 6, base_line_size = 0.5, base_rect_size = 0.5)+
-    theme(#aspect.ratio = 4/1.618, 
+    theme( 
       legend.position = "right",
       legend.direction = "vertical",
       panel.spacing = unit(0.25,units = "cm"),
       plot.title = element_text(hjust = 0.5,color="#000000", size=8),
       strip.text = element_text(color="#000000", size=6),
-      strip.background = element_blank(), #element_rect(colour = NA, fill = NA),
+      strip.background = element_blank(), 
       axis.line = element_line(color="#000000"),
       axis.text = element_text(color="#000000", size=6),
       axis.title = element_text(color="#000000", size=6),
       axis.ticks = element_line(color="#000000"),
       legend.title=element_text(size=6),
       legend.text=element_text(size=6),
-      legend.key.size = grid::unit(3,"mm")) #+
+      legend.key.size = grid::unit(3,"mm")) 
   
   ggsave(filename = "fig3I.pdf",path = file.path(out.file.path) ,device = "pdf", height=60,width = 60,dpi=300,units="mm",useDingbats=FALSE, family="Helvetica") 
 }
