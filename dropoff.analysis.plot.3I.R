@@ -385,8 +385,8 @@
   # dropoff estimation
   dropoff.probability = 1 - exp((log(rate.ratio))/(gene.lengths/2 - 1))
   dropoff.probability = data.frame(dropoff.probability)
-  dropoff.probability[dropoff.probability <= 0 | dropoff.probability >= 1] = NA
-  dropoff.probability = dropoff.probability[-which(is.na(rowSums(dropoff.probability))), ]
+  dropoff.probability[dropoff.probability <= 0 | dropoff.probability >= 1] = NA # setting NA values for genes with cov_i > cov_f
+  dropoff.probability = dropoff.probability[-which(is.na(rowSums(dropoff.probability))), ] # subsetting for genes with cov_i > cov_f
   
   # sample averages
   dmso1h = c(1,2) # column numbers, please check and change accordingly
